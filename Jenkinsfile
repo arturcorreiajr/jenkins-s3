@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                withCredentials([aws(accesskeyVariable:'AWS_ACCESS_KEY_ID', credencialsId:'aws-jenkins-s3',secretKeyVariable:'AWS_SECRET_ACCESS_KEY')]) {
+                withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-jenkins-s3', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                     sh '''
                         aws s3 ls
                         ls -lah
