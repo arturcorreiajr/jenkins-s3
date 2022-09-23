@@ -6,6 +6,7 @@ pipeline {
                  sh 'echo "Hello World"'
                  sh '''
                      echo "Multiline shell steps works too"
+                     aws s3 ls
                      ls -lah
                  '''
              }
