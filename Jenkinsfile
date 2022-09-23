@@ -4,12 +4,13 @@ pipeline {
         stage('Build') {
             steps {
                 withCredentials([aws(accesskeyVariable:'AWS_ACCESS_KEY_ID', credencialsId:'aws-jenkins-s3',secretKeyVariable:'AWS_SECRET_ACCESS_KEY')]) {
-                sh '''
-                    aws s3 ls
-                    ls -lah
-                '''
-            }
-        }      
+                    sh '''
+                        aws s3 ls
+                        ls -lah
+                    '''
+                }
+            }  
+        }    
         stage('Upload to AWS') {
             steps {
                 withAWS(region:'us-east-1',credentials:'aws-jenkins-s3') {
