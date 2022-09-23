@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                withCredentials([<object of type com.cloudbees.jenkins.plugins.awscredentials.AmazonWebServicesCredentialsBinding>]) {
+                withCredentials([aws(accesskeyVariable:'AWS_ACCESS_KEY_ID', credencialsId:'aws-jenkins-s3',secretKeyVariable:'AWS_SECRET_ACCESS_KEY')]) {
                 sh '''
                     aws s3 ls
                     ls -lah
