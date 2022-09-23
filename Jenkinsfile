@@ -4,8 +4,8 @@ pipeline {
          stage('Build') {
              steps {
                  sh 'echo "Hello World"'
+                withCredentials([<object of type com.cloudbees.jenkins.plugins.awscredentials.AmazonWebServicesCredentialsBinding>]) {
                  sh '''
-                     echo "Multiline shell steps works too"
                      aws s3 ls
                      ls -lah
                  '''
