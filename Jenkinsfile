@@ -6,8 +6,7 @@ pipeline {
     
   stages {
         
-  stages {
-    stage(‘Example’) {
+    stage('Example') {
       steps {
         sh ‘npm config ls’
       }
