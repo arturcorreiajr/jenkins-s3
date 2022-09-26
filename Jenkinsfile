@@ -1,4 +1,3 @@
-//Jenkins file only to tutorial example
 #!groovy
 import groovy.json.JsonSlurper
 import groovy.json.JsonOutput 
