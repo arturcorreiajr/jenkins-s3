@@ -1,14 +1,21 @@
-//Jenkins file only to tutorial example
+#!groovy
+import groovy.json.JsonSlurper
+import groovy.json.JsonOutput 
+
 pipeline {
   agent any
     
   tools {
-    nodejs '16.16.0'
+    nodejs 'nodejs'
   }
     
   stages {
         
+<<<<<<< HEAD
     stage('Example teste') {
+=======
+    stage('Example ttt') {
+>>>>>>> a7a55ffcb5474b6980b0414360b36e97ac0d81bd
       steps {
         sh 'npm config ls'
       }
@@ -23,6 +30,14 @@ pipeline {
     stage('Install Dependencies') {
       steps {
         sh 'npm install'
+      }
+    }
+
+    stage('Sync') {
+      steps{
+        sh 'cd ./dist/ '
+        sh 'pwd'
+        sh 'aws s3 sync . s3://bucket-s3/ --delete '
       }
     }
      
