@@ -6,13 +6,20 @@ pipeline {
     
   stages {
         
+  stages {
+    stage(‘Example’) {
+      steps {
+        sh ‘npm config ls’
+      }
+    }
+  
     stage('Cloning Git') {
       steps {
         git 'https://github.com/arturcorreiajr/jenkins-s3.git'
       }
     }
         
-    stage('Install dependencies') {
+    stage('Install Dependencies') {
       steps {
         sh 'npm install'
       }
