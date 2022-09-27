@@ -8,12 +8,6 @@ pipeline {
         nodejs 'nodejs'
     }
 
-    options {
-        ansiColor('xterm')
-        skipDefaultCheckout true
-    }
-
-
 //        awsAccessKey = credentials('jenkins-aws-secret-key-id')
 //        awsSecretKey = credentials('jenkins-aws-secret-access-key')
 
