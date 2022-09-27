@@ -19,10 +19,6 @@ pipeline {
         script {
           echo "Good Morning, $firstName"
         }
-        sh '''
-          hostname
-          cat /etc/redhat-release
-        '''
       }
     }
   }
