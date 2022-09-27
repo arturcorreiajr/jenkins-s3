@@ -1,4 +1,4 @@
-def env = null
+def environment = null
 
 pipeline {
   agent none
@@ -6,7 +6,7 @@ pipeline {
     stage('Set Environment') {
       steps {
         script {
-          env = input (
+          environment = input (
             message: 'Selecione o ambiente?',
             ok: 'Ok', 
             parameters: [string(defaultValue: 'Prod', name: 'Environment', trim: true)]
@@ -18,10 +18,10 @@ pipeline {
     stage('Hello') {
       steps {
         script {
-          if (env == 'PROD'){ 
+          if (environment == 'PROD'){ 
             echo 'Hello PROD'
           }
-          if (env.BRANCH_NAME == 'DEV'){
+          if (environment == 'DEV'){
             echo 'Hello DEV'
           }
         }
@@ -32,7 +32,7 @@ pipeline {
       agent any
       steps {
         script {
-          echo "Olá, $env"
+          echo "Olá, $environment"
         }
       }
     }
