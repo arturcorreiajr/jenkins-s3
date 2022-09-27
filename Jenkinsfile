@@ -9,7 +9,7 @@ pipeline {
 //    tools {nodejs "nodejs"}
 
     stages {
-      stage('check') {
+      stage('hello') {
         steps {
           sh 'whoami'
           sh 'npm install'
