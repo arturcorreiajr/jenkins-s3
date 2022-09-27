@@ -6,7 +6,7 @@ pipeline {
     stage('Set Environment') {
       steps {
         script {
-          nome = input (
+          env = input (
             message: 'Selecione o ambiente?',
             ok: 'Ok', 
             parameters: [string(defaultValue: 'Prod', name: 'Environment', trim: true)]
