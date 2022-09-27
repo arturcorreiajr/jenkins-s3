@@ -9,7 +9,7 @@ pipeline {
           environment = input (
             message: 'Selecione o ambiente?',
             ok: 'Ok', 
-            parameters: [string(defaultValue: 'Prod', name: 'DEV - PROD', trim: true)]
+            parameters: [string(defaultValue: 'DEV', name: 'DEV - PROD', trim: true)]
           )
         }
       }
