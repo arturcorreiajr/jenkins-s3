@@ -32,7 +32,7 @@ pipeline {
       agent any
       steps {
         script {
-          echo "Olá, $environment"
+          echo "$environment"
         }
       }
     }
