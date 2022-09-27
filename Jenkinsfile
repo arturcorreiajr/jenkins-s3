@@ -8,16 +8,16 @@ pipeline {
             label 'agent-1'
         }
     }
+
+
+//    tools {nodejs "nodejs"}
+
     stages {
       stage('check') {
         steps {
           sh 'echo $USER'
         }
       }
-
-//    tools {nodejs "nodejs"}
-
-    stages {
       stage('Build') {
         steps {
           sh 'npm -version '
