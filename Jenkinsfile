@@ -11,7 +11,7 @@ pipeline {
     stages {
       stage('check') {
         steps {
-          sh 'who'
+          sh 'whoami'
         }
       }
       stage('Build') {
