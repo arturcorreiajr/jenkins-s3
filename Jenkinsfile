@@ -11,7 +11,7 @@ pipeline {
     stages {
       stage('check') {
         steps {
-          sh 'echo $USER'
+          sh 'who'
         }
       }
       stage('Build') {
