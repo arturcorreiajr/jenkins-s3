@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  backoffice:
+    image: backoffice:latest
+    command: npm run serve
+    ports:
+      - '8081:8081'
+    volumes:
+      - '/home/node/app'
+volumes:
+  backoffice:
+    driver: local
