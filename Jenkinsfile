@@ -18,8 +18,8 @@ pipeline {
 
     stage('Hello') {
       steps {
-        while (!i){
-          script {
+        script {
+          while(!i){
             if (environment == 'PROD'){ 
               environment = 'BUCKET DO AMBIENTE DE PRODUÇÃO'
               i = true
