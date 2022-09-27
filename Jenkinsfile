@@ -4,11 +4,14 @@ import groovy.json.JsonOutput
 
 pipeline {
     agent any
-    tools {nodejs "nodejs"}
+
+
+//    tools {nodejs "nodejs"}
 
     stages {
       stage('Build') {
         steps {
+          sh 'npm -version '
           sh 'npm install '
           sh 'npm run build-qa '
         }
