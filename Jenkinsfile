@@ -19,10 +19,10 @@ pipeline {
       steps {
         script {
           if (environment == 'PROD'){ 
-            echo 'Hello PROD'
+            environment = 'Não faz cagada!'
           }
           if (environment == 'DEV'){
-            echo 'Hello DEV'
+            environment = 'Vai dar cagada!'
           }
         }
       }
