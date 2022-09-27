@@ -3,11 +3,7 @@ import groovy.json.JsonSlurper
 import groovy.json.JsonOutput
 
 pipeline {
-    agent {
-        node {
-            label 'agent-1'
-        }
-    }
+    agent any
 
 
 //    tools {nodejs "nodejs"}
