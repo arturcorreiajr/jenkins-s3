@@ -4,14 +4,8 @@ import groovy.json.JsonOutput
 
 pipeline {
     agent any
-    tools {
-        nodejs 'nodejs'
-    }
+    tools {nodejs "nodejs"}
 
-//        awsAccessKey = credentials('jenkins-aws-secret-key-id')
-//        awsSecretKey = credentials('jenkins-aws-secret-access-key')
-
-    
     stages {
       stage('Build') {
         steps {
