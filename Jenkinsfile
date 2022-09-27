@@ -1,23 +1,26 @@
-def firstName = null
+def env = null
+
 pipeline {
   agent none
   stages {
-    stage('input') {
+    stage('Set Environment') {
       steps {
         script {
-          firstName = input (
-            message: 'What is your first name?', 
-            ok: 'Submit', 
-            parameters: [string(defaultValue: 'Dave', name: 'FIRST_NAME', trim: true)]
+          nome = input (
+            message: 'Selecione o ambiente?',
+            ok: 'Ok', 
+            parameters: [string(defaultValue: 'Prod', name: 'FIRST_NAME', trim: true)]
           )
         }
       }
     }
+
+
     stage('output') {
       agent any
       steps {
         script {
-          echo "Good Morning, $firstName"
+          echo "Olá, $env"
         }
       }
     }
