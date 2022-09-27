@@ -28,9 +28,10 @@ pipeline{
         stage('Deploy docker'){
             steps{
                 script {
-                    echo "arturcorreiajunior/backoffice:${env.BUILD_ID}"
-                    sh "docker stop backoffice || true && docker rm backoffice || true"
-                    sh "docker run --name backoffice -d -p 8081:8081 arturcorreiajunior/backoffice:${env.BUILD_ID}"
+                    sh 'docker-compose up'
+                //    echo "arturcorreiajunior/backoffice:${env.BUILD_ID}"
+                //    sh "docker stop backoffice || true && docker rm backoffice || true"
+                //    sh "docker run --name backoffice -d -p 8081:8081 arturcorreiajunior/backoffice:${env.BUILD_ID}"
                 }
             }
 
