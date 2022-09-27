@@ -1,4 +1,5 @@
 def environment = null
+def i = false
 
 pipeline {
   agent none
@@ -17,12 +18,17 @@ pipeline {
 
     stage('Hello') {
       steps {
-        script {
-          if (environment == 'PROD'){ 
-            environment = 'BUCKET DO AMBIENTE DE PRODUÇÃO'
-          }
-          if (environment == 'DEV'){
-            environment = 'BUCKET DO AMBIENTE DE DEV'
+        while (!i){
+          script {
+            if (environment == 'PROD'){ 
+              environment = 'BUCKET DO AMBIENTE DE PRODUÇÃO'
+              i = true
+            }else if (environment == 'DEV'){
+              environment = 'BUCKET DO AMBIENTE DE DEV'
+              i = true
+            } else {
+              i = false
+            }
           }
         }
       }
