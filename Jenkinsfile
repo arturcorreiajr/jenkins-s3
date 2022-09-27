@@ -1,21 +1,26 @@
-#!groovy
-import groovy.json.JsonSlurper
-import groovy.json.JsonOutput
-
 pipeline {
-    agent any
-
-
-//    tools {nodejs "nodejs"}
-
-    stages {
-      stage('Input') {
-        steps {
-          Input(message: 'Informe o bucket:', ok: 'Submit')
-          sh'''
-
-          '''
+  agent none
+  stages {
+    stage('input') {
+      agent any
+      when {
+        beforeInput true
+        branch 'production'
+      }
+      input {
+        message "What is your first name?"
+        ok "Submit"
+        parameters {
+          string(defaultValue: 'Dave', name: 'FIRST_NAME', trim: true) 
         }
       }
+      steps {
+        echo "Good Morning, $FIRST_NAME"
+        sh '''
+          hostname
+          cat /etc/redhat-release
+        '''
+      }
     }
+  }
 }
