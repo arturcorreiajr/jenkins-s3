@@ -12,6 +12,7 @@ pipeline {
       stage('check') {
         steps {
           sh 'whoami'
+          sh 'npm install'
           sh 'node -version'
           sh 'npm -version'
         }
