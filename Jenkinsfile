@@ -18,20 +18,15 @@ pipeline {
     stage('Hello') {
       steps {
         script {
-          if (env.BRANCH_NAME == 'qa'){ 
-            echo 'Hello from main branch'
+          if (env == 'PROD'){ 
+            echo 'Hello PROD'
           }
-          if (env.BRANCH_NAME == 'dev'){
-            echo 'Hello from null branch'
-          }
-          else {
-              sh "echo 'Hello from ${env.BRANCH_NAME} branch!'"
+          if (env.BRANCH_NAME == 'DEV'){
+            echo 'Hello DEV'
           }
         }
       }
     }
-    
-
 
     stage('output') {
       agent any
