@@ -9,26 +9,12 @@ pipeline {
 //    tools {nodejs "nodejs"}
 
     stages {
-      stage('hello') {
+      stage('Input') {
         steps {
-          sh 'whoami'
-          sh 'npm install'
-          sh 'node -version'
-          sh 'npm -version'
-        }
-      }
-      stage('Build') {
-        steps {
-          sh 'npm -version '
-          sh 'npm install '
-          sh 'npm run build-qa '
-        }
-      }
-      stage('Sync') {
-        steps{
-          sh 'cd ./dist/ '
-          sh 'pwd'
-          sh 'aws s3 sync . s3://buckets3/ --delete '
+          Input(message: 'Informe o bucket:', ok: 'Submit')
+          sh'''
+
+          '''
         }
       }
     }
