@@ -1,0 +1,296 @@
+:root {
+    --background-default: #1c4b84;
+    --background-hover-default: #34649b;
+    --background-sub-items: #163964;
+    --background-secondary: #f6f6f6;
+
+    --font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-color-primary: #555;
+    --font-color-secondary: #ccc;
+    --font-size-default: 0.72em;
+    --font-size-title: 2.5em;
+    --font-size-title-small: 0.35em;
+    --font-weight-primary: 600;
+    --font-lether-spacing: .3px;
+
+    --color-text-default: #333;
+    --color-title-default: #163964;
+
+    --color-primary: #1C4B84;
+    --color-success: #2bad2b;
+    --color-info: #47badf;
+    --color-danger: #da3d3d;
+    --color-warning: #f1a43f;
+    --color-secondary: #505050;
+    --color-third: #ccc;
+
+    --color-primary-hover: #34649b;
+    --color-success-hover: #2bad2b;
+    --color-info-hover: #5bd5ff;
+    --color-danger-hover: #f13939;
+    --color-warning-hover: #ffbc66;
+    --color-secondary-hover: #505050;
+    --color-third-hover: #ccc;
+
+    --color-table-primary: #89b8ff;
+    --color-table-success: #65c465;
+
+    --border-radius-default: 3px;
+}
+
+pre {
+    white-space: pre-line;
+    word-break: break-word;
+    font-family: var(--font-family);
+    text-align: justify;
+    padding: 10px 0;
+    letter-spacing: var(--font-lether-spacing);
+}
+
+.btn {
+    border-radius: 0 !important;
+}
+
+.v-toast__item {
+    border-radius: 0 !important;
+}
+
+.btn-login {
+    font-size: 15px;
+    font-weight: var(--font-weight-primary);
+    color: var(--font-color-primary);
+}
+
+.btn-login > img {
+    width: 22px;
+    top: -3px;
+    position: relative;
+}
+
+.btn-login:hover {
+    color: var(--font-color-primary);
+    opacity: .8;
+}
+
+.d-content {
+    padding: 0.5em 2em 0.5em 0.5em;
+    min-height: 88vh;
+}
+
+.title-content h2 {
+    color: var(--font-color-primary);
+}
+
+.title-content h2 > b {
+    color: var(--color-primary);
+}
+
+.title-content h3 {
+    color: var(--font-color-secondary);
+    font-size: var(--font-size-default);
+}
+
+input {
+    color: var(--font-color-primary) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.bg-primary {
+    background: var(--background-default) !important;
+}
+
+.bg-info {
+    background: var(--color-info) !important;
+}
+
+.bg-success {
+    background: var(--color-success) !important;
+}
+
+.page-link {
+    color: var(--color-primary);
+}
+
+.page-item.active .page-link {
+    background-color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+}
+
+.list-group-item {
+    border-radius: var(--border-radius-default) !important;
+}
+
+.list-group-item {
+    border: none !important;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.multiselect__tags, .multiselect__content-wrapper {
+    border-radius: 0 !important;
+    border-color: #ddd !important;
+}
+
+.multiselect__option--highlight {
+    background: var(--background-default) !important;
+}
+
+.multiselect__option--highlight:after {
+    background: var(--background-hover-default) !important;
+}
+
+.multiselect__tag {
+    background: var(--background-hover-default);
+}
+
+.multiselect__tag-icon, .multiselect__tag-icon:after {
+    background: transparent !important;
+    color: white !important;
+    transition: all .3s;
+}
+
+.close-modal {
+    color: #4d4d4d;
+    transition: all .3s;
+}
+
+.close-modal:hover {
+    color: #adadad;
+    transition: all .3s;
+}
+
+/***RESET CSS***/
+body {
+    overflow-x: hidden;
+}
+
+/***RESET CSS***/
+
+
+/***RESET CSS BS***/
+.page-item span, .form-control {
+    border-radius: 0 !important;
+}
+
+.btn-primary {
+    background: var(--color-primary) !important;
+    border: solid 1px var(--color-primary) !important;
+}
+
+.btn-primary:hover {
+    background: var(--color-primary-hover) !important;
+    border: solid 1px var(--color-primary-hover) !important;
+}
+
+.text-primary {
+    color: var(--color-primary) !important;
+}
+
+.table-primary td {
+    background: var(--color-table-primary) !important;
+    --bs-table-accent-bg: none !important;
+}
+
+.table-success td {
+    background: var(--color-table-success) !important;
+    --bs-table-accent-bg: none !important;
+    color: white !important;
+    font-weight: bold;
+}
+
+.btn-danger {
+    background: var(--color-danger) !important;
+    border: solid 1px var(--color-danger) !important;
+}
+
+.btn-danger:hover {
+    background: var(--color-danger-hover) !important;
+    border: solid 1px var(--color-danger-hover) !important;
+}
+
+.text-danger {
+    color: var(--color-danger) !important;
+}
+
+.btn-warning {
+    background: var(--color-warning) !important;
+    border-color: var(--color-warning) !important;
+    color: white !important;
+}
+
+.btn-warning:hover {
+    background: var(--color-warning-hover) !important;
+    border-color: var(--color-warning-hover) !important;
+}
+
+.text-warning {
+    color: var(--color-warning) !important;
+}
+
+.btn-info {
+    background: var(--color-info) !important;
+    border-color: var(--color-info) !important;
+    color: white !important;
+}
+
+.btn-info:hover {
+    background: var(--color-info-hover) !important;
+    border-color: var(--color-info-hover) !important;
+}
+
+.text-info {
+    color: var(--color-info) !important;
+}
+
+.btn {
+    height: 40px;
+}
+
+.page-item, .page-link {
+    border-radius: 0 !important;
+}
+
+.page-link.active {
+    background: var(--background-default) !important;
+    border: solid 1px var(--background-default);
+}
+
+.img-thumbnail {
+    border-radius: 0;
+}
+
+.dropdown-menu-right, .dropdown-menu {
+    border-radius: 0 !important;
+}
+
+.dropdown-menu-right .active, .dropdown-menu .active {
+    background: var(--background-default) !important;
+}
+
+.dropdown-toggle {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;;
+}
+
+.dropdown-toggle:after {
+    display: none !important;
+}
+
+/***RESET CSS BS***/
+
+.item-section {
+    border: solid 1px #ddd;
+}
+
+.got-coin {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+.got-coin img {
+    width: 30px;
+}

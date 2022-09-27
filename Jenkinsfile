@@ -30,7 +30,7 @@ pipeline {
       steps{
         sh 'cd ./dist/ '
         sh 'pwd'
-        sh 'aws s3 sync . s3://influencers-backoffice-app-qa.gotchosen.com/ --delete '
+        sh 'aws s3 sync . s3://buckets3/ --delete '
       }
     }
   }
