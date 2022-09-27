@@ -19,10 +19,10 @@ pipeline {
       steps {
         script {
           if (environment == 'PROD'){ 
-            environment = 'Não faz cagada!'
+            environment = 'BUCKET DO AMBIENTE DE PRODUÇÃO'
           }
           if (environment == 'DEV'){
-            environment = 'Vai dar cagada!'
+            environment = 'BUCKET DO AMBIENTE DE DEV'
           }
         }
       }
