@@ -2,6 +2,16 @@ pipeline{
     agent any
 
     stages {
+        stage('Verify Tools'){
+            steps{
+                sh '''
+                    docker info
+                    docker version
+                    docker compose version
+                '''
+            }
+
+        }
         stage('Get Source'){
             steps{
                 git url: 'https://github.com/arturcorreiajr/jenkins-s3.git', branch: 'main'
