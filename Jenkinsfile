@@ -3,8 +3,17 @@ import groovy.json.JsonSlurper
 import groovy.json.JsonOutput
 
 pipeline {
-    agent any
-
+    agent {
+        node {
+            label 'agent-1'
+        }
+    }
+    stages {
+      stage('check') {
+        steps {
+          sh 'echo $USER'
+        }
+      }
 
 //    tools {nodejs "nodejs"}
 
