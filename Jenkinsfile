@@ -7,7 +7,10 @@ pipeline {
   stages {
     stage('Show Info') {
       steps {
-        echo 'Branch: ' + env.GIT_BRANCH
+        when {
+          branch 'main'
+        }
+        echo 'Branch: main'
       }
     }
     stage('Set Environment') {
