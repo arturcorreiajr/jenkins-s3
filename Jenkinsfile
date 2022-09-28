@@ -1,45 +1,48 @@
-pipeline{
-    agent any
+def environment = null
+def i = false
 
-    stages {
-        stage('Verify Tools'){
-            steps{
-                sh '''
-                    docker info
-                    docker version
-                    docker compose version
-                '''
-            }
+pipeline {
+  agent none
 
-        }
-        stage('Get Source'){
-            steps{
-                git url: 'https://github.com/arturcorreiajr/jenkins-s3.git', branch: 'main'
-            }
-
-        }
-        stage('Docker Build'){
-            steps{
-                script {
-                    dockerapp = docker.build("arturcorreiajunior/backoffice:${env.BUILD_ID}", '-f ./Dockerfile .')
-                }
-            }
-        }
-        stage('Docker Push Image'){
-            steps{
-                script {
-                        docker.withRegistry('http://registry.hub.docker.com', 'github-token-jenkins'){
-                        dockerapp.push('latest')
-                        dockerapp.push("${env.BUILD_ID}")
-                    }
-                }
-            }
-        }
-        stage('Deploy docker'){
-            steps{
-                sh 'docker-compose up'
-            }
-
+  stages {
+    stage('Show Info') {
+      steps {
+        echo 'Branch: ' + env.GIT_BRANCH
+        echo 'Author: ' + sh(returnStdout: true, script: "git --no-pager show -s --format='%an'").trim()
         }
     }
+  }
+  stages {
+    stage('Set Environment') {
+      steps {
+        script {
+          environment = input (
+            message: 'Selecione o ambiente?',
+            ok: 'Ok', 
+            parameters: [string(defaultValue: 'DEV', name: 'DEV - PROD', trim: true)]
+          )
+        }
+      }
+    }
+
+    stage('Hello'){
+      steps {
+        script {
+          while(!i){
+            if (environment == 'PROD'){ 
+              environment = 'BUCKET DO AMBIENTE DE PRODUÇÃO'
+              i = true
+            }else if (environment == 'DEV'){
+              environment = 'BUCKET DO AMBIENTE DE DEV'
+              i = true
+            } else {
+              i = false
+            }
+          }
+        }
+      }
+    }
+
+
+  }
 }
