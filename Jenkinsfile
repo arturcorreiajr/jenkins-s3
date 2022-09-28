@@ -11,8 +11,6 @@ pipeline {
         echo 'Author: ' + sh(returnStdout: true, script: "git --no-pager show -s --format='%an'").trim()
         }
     }
-  }
-  stages {
     stage('Set Environment') {
       steps {
         script {
