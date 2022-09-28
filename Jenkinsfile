@@ -6,10 +6,10 @@ pipeline {
 
   stages {
     stage('Show Info') {
+      when {
+        branch 'main'
+      }
       steps {
-        when {
-          branch 'main'
-        }
         echo 'Branch: main'
       }
     }
