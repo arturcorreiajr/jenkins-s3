@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Show Info') {
       when {
-        branch 'main'
+        branch 'master'
       }
       steps {
         echo 'Branch: main'
